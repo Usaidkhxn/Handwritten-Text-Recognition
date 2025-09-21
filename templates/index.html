@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hindi Handwritten Recognition</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+<div class="container"> 
+    <h1>Hindi Handwritten Recognition</h1>
+    <form action="/convert" method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .png, .jpeg, .webp">
+        <input type="submit" value="Convert">
+    </form>
+    <p>Converted Text:</p>
+    <div id="result"></div>
+    
+</div>
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+
+            fetch('/convert', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = data.result;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
+</body>
+</html>
+

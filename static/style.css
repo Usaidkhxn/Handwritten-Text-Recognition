@@ -1,0 +1,61 @@
+
+body {
+    background-color: #040C18; 
+    font-family: Arial, sans-serif;
+    color: #ecf0f1; 
+    --color-bg: #040C18;
+  --color-footer : #031B34;
+  --color-blog: #042c54;
+  --color-text: #81AFDD;
+  --color-subtext: #FF8A71;
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 36px;
+    background: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%); /* Linear gradient background */
+    -webkit-background-clip: text; 
+    color: transparent; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+p {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+
+input[type="submit"] {
+    background-color: #e74c3c; 
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #c0392b; 
+}
+
+
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
